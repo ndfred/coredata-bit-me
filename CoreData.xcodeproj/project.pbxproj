@@ -14,6 +14,7 @@
 		B62CDE72150D4FAE00A2B191 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE6F150D4FAE00A2B191 /* main.m */; };
 		B62CDE77150D505800A2B191 /* BenchmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE75150D505800A2B191 /* BenchmarkViewController.m */; };
 		B62CDE78150D505800A2B191 /* BenchmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B62CDE76150D505800A2B191 /* BenchmarkViewController.xib */; };
+		B62CDE82150D53E100A2B191 /* Benchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE81150D53E100A2B191 /* Benchmark.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		B62CDE74150D505800A2B191 /* BenchmarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkViewController.h; sourceTree = "<group>"; };
 		B62CDE75150D505800A2B191 /* BenchmarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkViewController.m; sourceTree = "<group>"; };
 		B62CDE76150D505800A2B191 /* BenchmarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BenchmarkViewController.xib; sourceTree = "<group>"; };
+		B62CDE80150D53E100A2B191 /* Benchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Benchmark.h; sourceTree = "<group>"; };
+		B62CDE81150D53E100A2B191 /* Benchmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Benchmark.m; sourceTree = "<group>"; };
+		B62CDE86150D544E00A2B191 /* Benchmark+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Benchmark+Private.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		B62CDE6C150D4FAE00A2B191 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B62CDE7C150D53B500A2B191 /* Benchmarks */,
 				B62CDE73150D4FFF00A2B191 /* UI */,
 				B62CDE6D150D4FAE00A2B191 /* AppDelegate.h */,
 				B62CDE6E150D4FAE00A2B191 /* AppDelegate.m */,
@@ -99,6 +104,40 @@
 				B62CDE76150D505800A2B191 /* BenchmarkViewController.xib */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		B62CDE7C150D53B500A2B191 /* Benchmarks */ = {
+			isa = PBXGroup;
+			children = (
+				B62CDE7D150D53B500A2B191 /* CoreData */,
+				B62CDE7E150D53B500A2B191 /* LevelDB */,
+				B62CDE7F150D53B500A2B191 /* SQLite */,
+				B62CDE80150D53E100A2B191 /* Benchmark.h */,
+				B62CDE86150D544E00A2B191 /* Benchmark+Private.h */,
+				B62CDE81150D53E100A2B191 /* Benchmark.m */,
+			);
+			path = Benchmarks;
+			sourceTree = "<group>";
+		};
+		B62CDE7D150D53B500A2B191 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B62CDE7E150D53B500A2B191 /* LevelDB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LevelDB;
+			sourceTree = "<group>";
+		};
+		B62CDE7F150D53B500A2B191 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SQLite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +205,7 @@
 				B62CDE71150D4FAE00A2B191 /* AppDelegate.m in Sources */,
 				B62CDE72150D4FAE00A2B191 /* main.m in Sources */,
 				B62CDE77150D505800A2B191 /* BenchmarkViewController.m in Sources */,
+				B62CDE82150D53E100A2B191 /* Benchmark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
