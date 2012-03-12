@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B62CDE4B150D4F0200A2B191 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4A150D4F0200A2B191 /* UIKit.framework */; };
+		B62CDE4B150D4F0200A2B191 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4A150D4F0200A2B191 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B62CDE4D150D4F0200A2B191 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4C150D4F0200A2B191 /* Foundation.framework */; };
-		B62CDE4F150D4F0200A2B191 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4E150D4F0200A2B191 /* CoreGraphics.framework */; };
 		B62CDE71150D4FAE00A2B191 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE6E150D4FAE00A2B191 /* AppDelegate.m */; };
 		B62CDE72150D4FAE00A2B191 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE6F150D4FAE00A2B191 /* main.m */; };
 		B62CDE77150D505800A2B191 /* BenchmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE75150D505800A2B191 /* BenchmarkViewController.m */; };
 		B62CDE78150D505800A2B191 /* BenchmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B62CDE76150D505800A2B191 /* BenchmarkViewController.xib */; };
 		B62CDE82150D53E100A2B191 /* Benchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE81150D53E100A2B191 /* Benchmark.m */; };
+		B62CDE8B150D59AC00A2B191 /* CoreDataBenchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE8A150D59AC00A2B191 /* CoreDataBenchmark.m */; };
+		B62CDE8D150D5A4100A2B191 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE8C150D5A4100A2B191 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B62CDEBB150D69C200A2B191 /* TVGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B62CDEB9150D69C200A2B191 /* TVGuide.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,11 @@
 		B62CDE80150D53E100A2B191 /* Benchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Benchmark.h; sourceTree = "<group>"; };
 		B62CDE81150D53E100A2B191 /* Benchmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Benchmark.m; sourceTree = "<group>"; };
 		B62CDE86150D544E00A2B191 /* Benchmark+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Benchmark+Private.h"; sourceTree = "<group>"; };
+		B62CDE89150D59AC00A2B191 /* CoreDataBenchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataBenchmark.h; sourceTree = "<group>"; };
+		B62CDE8A150D59AC00A2B191 /* CoreDataBenchmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataBenchmark.m; sourceTree = "<group>"; };
+		B62CDE8C150D5A4100A2B191 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B62CDEBA150D69C200A2B191 /* TVGuide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVGuide.xcdatamodel; sourceTree = "<group>"; };
+		B62CDEBC150D72AB00A2B191 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,9 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62CDE8D150D5A4100A2B191 /* CoreData.framework in Frameworks */,
 				B62CDE4B150D4F0200A2B191 /* UIKit.framework in Frameworks */,
 				B62CDE4D150D4F0200A2B191 /* Foundation.framework in Frameworks */,
-				B62CDE4F150D4F0200A2B191 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +79,7 @@
 				B62CDE4A150D4F0200A2B191 /* UIKit.framework */,
 				B62CDE4C150D4F0200A2B191 /* Foundation.framework */,
 				B62CDE4E150D4F0200A2B191 /* CoreGraphics.framework */,
+				B62CDE8C150D5A4100A2B191 /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,6 +100,7 @@
 				B62CDE6D150D4FAE00A2B191 /* AppDelegate.h */,
 				B62CDE6E150D4FAE00A2B191 /* AppDelegate.m */,
 				B62CDE6F150D4FAE00A2B191 /* main.m */,
+				B62CDEBC150D72AB00A2B191 /* Log.h */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -122,6 +131,9 @@
 		B62CDE7D150D53B500A2B191 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				B62CDE89150D59AC00A2B191 /* CoreDataBenchmark.h */,
+				B62CDE8A150D59AC00A2B191 /* CoreDataBenchmark.m */,
+				B62CDEB9150D69C200A2B191 /* TVGuide.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -206,6 +218,8 @@
 				B62CDE72150D4FAE00A2B191 /* main.m in Sources */,
 				B62CDE77150D505800A2B191 /* BenchmarkViewController.m in Sources */,
 				B62CDE82150D53E100A2B191 /* Benchmark.m in Sources */,
+				B62CDE8B150D59AC00A2B191 /* CoreDataBenchmark.m in Sources */,
+				B62CDEBB150D69C200A2B191 /* TVGuide.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +268,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -295,7 +309,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,6 +357,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B62CDEB9150D69C200A2B191 /* TVGuide.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B62CDEBA150D69C200A2B191 /* TVGuide.xcdatamodel */,
+			);
+			currentVersion = B62CDEBA150D69C200A2B191 /* TVGuide.xcdatamodel */;
+			path = TVGuide.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B62CDE3D150D4F0100A2B191 /* Project object */;
 }

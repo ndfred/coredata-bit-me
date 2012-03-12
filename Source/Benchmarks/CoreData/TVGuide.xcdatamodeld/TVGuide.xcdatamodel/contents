@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Broadcast" syncable="YES">
+        <relationship name="channel" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Channel" inverseName="broadcasts" inverseEntity="Channel" syncable="YES"/>
+        <relationship name="program" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Program" inverseName="broadcasts" inverseEntity="Program" syncable="YES"/>
+    </entity>
+    <entity name="Channel" syncable="YES">
+        <attribute name="identifier" attributeType="Integer 64" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="broadcasts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Broadcast" inverseName="channel" inverseEntity="Broadcast" syncable="YES"/>
+    </entity>
+    <entity name="Program" syncable="YES">
+        <attribute name="identifier" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="broadcasts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Broadcast" inverseName="program" inverseEntity="Broadcast" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Channel" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Program" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Broadcast" positionX="160" positionY="192" width="128" height="75"/>
+    </elements>
+</model>
