@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60000FC15153A860012D82C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE8C150D5A4100A2B191 /* CoreData.framework */; };
+		B60000FD15153A860012D82C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4C150D4F0200A2B191 /* Foundation.framework */; };
+		B600010D15153AC30012D82C /* mac-main.m in Sources */ = {isa = PBXBuildFile; fileRef = B600010C15153AC30012D82C /* mac-main.m */; };
+		B600010E15153B020012D82C /* CoreDataBenchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE8A150D59AC00A2B191 /* CoreDataBenchmark.m */; };
+		B600010F15153B080012D82C /* TVGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B62CDEB9150D69C200A2B191 /* TVGuide.xcdatamodeld */; };
+		B600011015153B0B0012D82C /* TVGuide-norelationships.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B622F8251514D7930045CBF8 /* TVGuide-norelationships.xcdatamodeld */; };
+		B600011215153B220012D82C /* Benchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE81150D53E100A2B191 /* Benchmark.m */; };
+		B600011315153BCC0012D82C /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = B622F6D81514D4820045CBF8 /* sqlite3.c */; };
 		B622F7A91514D4820045CBF8 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = B622F6D81514D4820045CBF8 /* sqlite3.c */; };
 		B622F8271514D7930045CBF8 /* TVGuide-norelationships.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B622F8251514D7930045CBF8 /* TVGuide-norelationships.xcdatamodeld */; };
 		B62CDE4B150D4F0200A2B191 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4A150D4F0200A2B191 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -23,7 +31,21 @@
 		B64B8C1B1514D93400BB48B7 /* TVGuide.sql in Resources */ = {isa = PBXBuildFile; fileRef = B64B8C1A1514D93400BB48B7 /* TVGuide.sql */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B60000F815153A850012D82C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B60000FA15153A850012D82C /* CoreData-Mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CoreData-Mac"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B600010C15153AC30012D82C /* mac-main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "mac-main.m"; sourceTree = "<group>"; };
 		B622F6D81514D4820045CBF8 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		B622F6D91514D4820045CBF8 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		B622F6DA1514D4820045CBF8 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
@@ -54,6 +76,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B60000F715153A850012D82C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B60000FC15153A860012D82C /* CoreData.framework in Frameworks */,
+				B60000FD15153A860012D82C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B62CDE43150D4F0100A2B191 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				B62CDE46150D4F0200A2B191 /* Core Data.app */,
+				B60000FA15153A850012D82C /* CoreData-Mac */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +163,7 @@
 				B62CDE73150D4FFF00A2B191 /* UI */,
 				B62CDE6D150D4FAE00A2B191 /* AppDelegate.h */,
 				B62CDE6E150D4FAE00A2B191 /* AppDelegate.m */,
+				B600010C15153AC30012D82C /* mac-main.m */,
 				B62CDE6F150D4FAE00A2B191 /* main.m */,
 				B62CDEBC150D72AB00A2B191 /* Log.h */,
 			);
@@ -151,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				B62CDE7D150D53B500A2B191 /* CoreData */,
-				B62CDE7E150D53B500A2B191 /* LevelDB */,
 				B62CDE7F150D53B500A2B191 /* SQLite */,
 				B62CDE80150D53E100A2B191 /* Benchmark.h */,
 				B62CDE86150D544E00A2B191 /* Benchmark+Private.h */,
@@ -171,13 +203,6 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		B62CDE7E150D53B500A2B191 /* LevelDB */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LevelDB;
-			sourceTree = "<group>";
-		};
 		B62CDE7F150D53B500A2B191 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +216,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B60000F915153A850012D82C /* CoreData-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B600010A15153A860012D82C /* Build configuration list for PBXNativeTarget "CoreData-Mac" */;
+			buildPhases = (
+				B60000F615153A850012D82C /* Sources */,
+				B60000F715153A850012D82C /* Frameworks */,
+				B60000F815153A850012D82C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoreData-Mac";
+			productName = "CoreData-Mac";
+			productReference = B60000FA15153A850012D82C /* CoreData-Mac */;
+			productType = "com.apple.product-type.tool";
+		};
 		B62CDE45150D4F0100A2B191 /* Core Data */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B62CDE5E150D4F0200A2B191 /* Build configuration list for PBXNativeTarget "Core Data" */;
@@ -231,6 +273,7 @@
 			projectRoot = "";
 			targets = (
 				B62CDE45150D4F0100A2B191 /* Core Data */,
+				B60000F915153A850012D82C /* CoreData-Mac */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +308,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B60000F615153A850012D82C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B600010D15153AC30012D82C /* mac-main.m in Sources */,
+				B600010E15153B020012D82C /* CoreDataBenchmark.m in Sources */,
+				B600010F15153B080012D82C /* TVGuide.xcdatamodeld in Sources */,
+				B600011015153B0B0012D82C /* TVGuide-norelationships.xcdatamodeld in Sources */,
+				B600011215153B220012D82C /* Benchmark.m in Sources */,
+				B600011315153BCC0012D82C /* sqlite3.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B62CDE42150D4F0100A2B191 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,6 +340,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		B600010815153A860012D82C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B600010915153A860012D82C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		B62CDE5C150D4F0200A2B191 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -396,6 +476,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B600010A15153A860012D82C /* Build configuration list for PBXNativeTarget "CoreData-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B600010815153A860012D82C /* Debug */,
+				B600010915153A860012D82C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B62CDE40150D4F0100A2B191 /* Build configuration list for PBXProject "CoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
