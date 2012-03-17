@@ -14,6 +14,7 @@
 
 @implementation CoreDataBenchmark
 
+@synthesize resetCacheOnFlush = _resetCacheOnFlush;
 @synthesize relationshipsEnabled = _relationshipsEnabled;
 @synthesize context = _context;
 @synthesize channelObjectIdentifiers = _channelObjectIdentifiers;
@@ -99,6 +100,8 @@
             [programObjectIdentifiers setObject:object.objectID forKey:programIdentifier];
         }
     }];
+
+    if (self.resetCacheOnFlush) [self.context reset];
 }
 
 - (void)createChannelWithIdentifier:(NSUInteger)identifier name:(NSString *)name {
