@@ -13,6 +13,10 @@
 @synthesize rawResults = _rawResults;
 @synthesize flushSetSize = _flushSetSize;
 
++ (NSString *)name {
+    return @"Benchmark";
+}
+
 + (NSURL *)cleanDatabaseURL {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -94,6 +98,13 @@
     }];
 
     return runTime;
+}
+
+- (NSString *)name {
+    // Should be implemented in subclasses
+    [self doesNotRecognizeSelector:_cmd];
+
+    return nil;
 }
 
 - (void)flush {

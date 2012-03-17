@@ -33,6 +33,10 @@
     return [self initWithRelationShipsEnabled:YES];
 }
 
+- (NSString *)name {
+    return self.relationshipsEnabled ? @"Core Data" : @"Core Data (no relationships)";
+}
+
 - (void)runWithChannelsCount:(NSUInteger)channelsCount programsCount:(NSUInteger)programsCount {
     NSString *modelName = self.relationshipsEnabled ? @"TVGuide" : @"TVGuide-norelationships";
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:modelName withExtension:@"momd"];

@@ -15,6 +15,10 @@
 
 @synthesize database = _database;
 
+- (NSString *)name {
+    return @"SQLite";
+}
+
 - (void)runWithChannelsCount:(NSUInteger)channelsCount programsCount:(NSUInteger)programsCount {
     NSString *databasePath = self.class.cleanDatabaseURL.relativePath;
     NSURL *statementsFileURL = [[NSBundle mainBundle] URLForResource:@"TVGuide" withExtension:@"sql"];

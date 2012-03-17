@@ -7,5 +7,6 @@
 
 - (void)runWithChannelsCount:(NSUInteger)channelsCount programsCount:(NSUInteger)programsCount;
 - (NSTimeInterval)runTime;
+- (NSString *)name;
 
 @end
