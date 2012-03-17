@@ -1,5 +1,6 @@
 #import "BenchmarkViewController.h"
 #import "CoreDataBenchmark.h"
+#import "SQLiteBenchmark.h"
 
 @interface BenchmarkViewController ()
 
@@ -12,6 +13,7 @@
 
     [[[CoreDataBenchmark alloc] init] runWithChannelsCount:100 programsCount:8000];
     [[[CoreDataBenchmark alloc] initWithRelationShipsEnabled:NO] runWithChannelsCount:100 programsCount:8000];
+    [[[SQLiteBenchmark alloc] init] runWithChannelsCount:100 programsCount:8000];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {

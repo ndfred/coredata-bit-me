@@ -19,6 +19,8 @@
 		B62CDE8B150D59AC00A2B191 /* CoreDataBenchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE8A150D59AC00A2B191 /* CoreDataBenchmark.m */; };
 		B62CDE8D150D5A4100A2B191 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE8C150D5A4100A2B191 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B62CDEBB150D69C200A2B191 /* TVGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B62CDEB9150D69C200A2B191 /* TVGuide.xcdatamodeld */; };
+		B64B8C181514D91400BB48B7 /* SQLiteBenchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B8C171514D91400BB48B7 /* SQLiteBenchmark.m */; };
+		B64B8C1B1514D93400BB48B7 /* TVGuide.sql in Resources */ = {isa = PBXBuildFile; fileRef = B64B8C1A1514D93400BB48B7 /* TVGuide.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,9 @@
 		B62CDE8C150D5A4100A2B191 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B62CDEBA150D69C200A2B191 /* TVGuide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVGuide.xcdatamodel; sourceTree = "<group>"; };
 		B62CDEBC150D72AB00A2B191 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		B64B8C161514D91400BB48B7 /* SQLiteBenchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteBenchmark.h; sourceTree = "<group>"; };
+		B64B8C171514D91400BB48B7 /* SQLiteBenchmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteBenchmark.m; sourceTree = "<group>"; };
+		B64B8C1A1514D93400BB48B7 /* TVGuide.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TVGuide.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +181,9 @@
 		B62CDE7F150D53B500A2B191 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				B64B8C161514D91400BB48B7 /* SQLiteBenchmark.h */,
+				B64B8C171514D91400BB48B7 /* SQLiteBenchmark.m */,
+				B64B8C1A1514D93400BB48B7 /* TVGuide.sql */,
 			);
 			path = SQLite;
 			sourceTree = "<group>";
@@ -233,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62CDE78150D505800A2B191 /* BenchmarkViewController.xib in Resources */,
+				B64B8C1B1514D93400BB48B7 /* TVGuide.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +277,7 @@
 				B62CDEBB150D69C200A2B191 /* TVGuide.xcdatamodeld in Sources */,
 				B622F7A91514D4820045CBF8 /* sqlite3.c in Sources */,
 				B622F8271514D7930045CBF8 /* TVGuide-norelationships.xcdatamodeld in Sources */,
+				B64B8C181514D91400BB48B7 /* SQLiteBenchmark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
