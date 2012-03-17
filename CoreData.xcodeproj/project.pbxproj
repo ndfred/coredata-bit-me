@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B622F7A91514D4820045CBF8 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = B622F6D81514D4820045CBF8 /* sqlite3.c */; };
+		B622F8271514D7930045CBF8 /* TVGuide-norelationships.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B622F8251514D7930045CBF8 /* TVGuide-norelationships.xcdatamodeld */; };
 		B62CDE4B150D4F0200A2B191 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4A150D4F0200A2B191 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B62CDE4D150D4F0200A2B191 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4C150D4F0200A2B191 /* Foundation.framework */; };
 		B62CDE71150D4FAE00A2B191 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE6E150D4FAE00A2B191 /* AppDelegate.m */; };
@@ -25,6 +26,7 @@
 		B622F6D91514D4820045CBF8 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		B622F6DA1514D4820045CBF8 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
 		B622F8241514D5E80045CBF8 /* fetch.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fetch.sh; sourceTree = "<group>"; };
+		B622F8261514D7930045CBF8 /* TVGuide-norelationships.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TVGuide-norelationships.xcdatamodel"; sourceTree = "<group>"; };
 		B62CDE46150D4F0200A2B191 /* Core Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62CDE4A150D4F0200A2B191 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B62CDE4C150D4F0200A2B191 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -159,6 +161,7 @@
 				B62CDE89150D59AC00A2B191 /* CoreDataBenchmark.h */,
 				B62CDE8A150D59AC00A2B191 /* CoreDataBenchmark.m */,
 				B62CDEB9150D69C200A2B191 /* TVGuide.xcdatamodeld */,
+				B622F8251514D7930045CBF8 /* TVGuide-norelationships.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				B62CDE8B150D59AC00A2B191 /* CoreDataBenchmark.m in Sources */,
 				B62CDEBB150D69C200A2B191 /* TVGuide.xcdatamodeld in Sources */,
 				B622F7A91514D4820045CBF8 /* sqlite3.c in Sources */,
+				B622F8271514D7930045CBF8 /* TVGuide-norelationships.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +407,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		B622F8251514D7930045CBF8 /* TVGuide-norelationships.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B622F8261514D7930045CBF8 /* TVGuide-norelationships.xcdatamodel */,
+			);
+			currentVersion = B622F8261514D7930045CBF8 /* TVGuide-norelationships.xcdatamodel */;
+			path = "TVGuide-norelationships.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		B62CDEB9150D69C200A2B191 /* TVGuide.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

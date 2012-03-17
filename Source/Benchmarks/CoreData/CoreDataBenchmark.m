@@ -5,6 +5,7 @@
 
 @interface CoreDataBenchmark ()
 
+@property (assign, nonatomic) BOOL relationshipsEnabled;
 @property (strong, nonatomic) NSManagedObjectContext *context;
 @property (strong, nonatomic) NSMutableDictionary *channelObjectIdentifiers;
 @property (strong, nonatomic) NSMutableDictionary *programObjectIdentifiers;
@@ -13,12 +14,28 @@
 
 @implementation CoreDataBenchmark
 
+@synthesize relationshipsEnabled = _relationshipsEnabled;
 @synthesize context = _context;
 @synthesize channelObjectIdentifiers = _channelObjectIdentifiers;
 @synthesize programObjectIdentifiers = _programObjectIdentifiers;
 
+- (id)initWithRelationShipsEnabled:(BOOL)relationshipsEnabled {
+    self = [super init];
+
+    if (self != nil) {
+        self.relationshipsEnabled = relationshipsEnabled;
+    }
+
+    return self;
+}
+
+- (id)init {
+    return [self initWithRelationShipsEnabled:YES];
+}
+
 - (void)runWithChannelsCount:(NSUInteger)channelsCount programsCount:(NSUInteger)programsCount {
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"TVGuide" withExtension:@"momd"];
+    NSString *modelName = self.relationshipsEnabled ? @"TVGuide" : @"TVGuide-norelationships";
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:modelName withExtension:@"momd"];
     NSURL *storeURL = [[self class] cleanDatabaseURL];
     NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
