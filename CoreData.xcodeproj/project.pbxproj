@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B622F7A91514D4820045CBF8 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = B622F6D81514D4820045CBF8 /* sqlite3.c */; };
 		B62CDE4B150D4F0200A2B191 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4A150D4F0200A2B191 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B62CDE4D150D4F0200A2B191 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62CDE4C150D4F0200A2B191 /* Foundation.framework */; };
 		B62CDE71150D4FAE00A2B191 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CDE6E150D4FAE00A2B191 /* AppDelegate.m */; };
@@ -20,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B622F6D81514D4820045CBF8 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		B622F6D91514D4820045CBF8 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		B622F6DA1514D4820045CBF8 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		B622F8241514D5E80045CBF8 /* fetch.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fetch.sh; sourceTree = "<group>"; };
 		B62CDE46150D4F0200A2B191 /* Core Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62CDE4A150D4F0200A2B191 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B62CDE4C150D4F0200A2B191 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,9 +60,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B622F64A1514D4820045CBF8 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				B622F6D61514D4820045CBF8 /* SQLite */,
+				B622F8241514D5E80045CBF8 /* fetch.sh */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		B622F6D61514D4820045CBF8 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				B622F6D81514D4820045CBF8 /* sqlite3.c */,
+				B622F6D91514D4820045CBF8 /* sqlite3.h */,
+				B622F6DA1514D4820045CBF8 /* sqlite3ext.h */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
 		B62CDE3B150D4F0100A2B191 = {
 			isa = PBXGroup;
 			children = (
+				B622F64A1514D4820045CBF8 /* Externals */,
 				B62CDE6C150D4FAE00A2B191 /* Source */,
 				B62CDE6A150D4FAE00A2B191 /* Resources */,
 				B62CDE49150D4F0200A2B191 /* Frameworks */,
@@ -159,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B62CDE5E150D4F0200A2B191 /* Build configuration list for PBXNativeTarget "Core Data" */;
 			buildPhases = (
+				B622F8221514D5C90045CBF8 /* ShellScript */,
 				B62CDE42150D4F0100A2B191 /* Sources */,
 				B62CDE43150D4F0100A2B191 /* Frameworks */,
 				B62CDE44150D4F0100A2B191 /* Resources */,
@@ -209,6 +235,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B622F8221514D5C90045CBF8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh -ex";
+			shellScript = Externals/fetch.sh;
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B62CDE42150D4F0100A2B191 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -220,6 +263,7 @@
 				B62CDE82150D53E100A2B191 /* Benchmark.m in Sources */,
 				B62CDE8B150D59AC00A2B191 /* CoreDataBenchmark.m in Sources */,
 				B62CDEBB150D69C200A2B191 /* TVGuide.xcdatamodeld in Sources */,
+				B622F7A91514D4820045CBF8 /* sqlite3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
