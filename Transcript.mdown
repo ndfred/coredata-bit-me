@@ -8,7 +8,7 @@ We thought about how you would use a TV program, and that's when you’re bored:
 
 So off I went developing a nice synchronization protocol and a superb JSON to Core Data streaming backend. I was quite proud of myself. 10000 objects being synced, with the UI updating in real time. Thank you, Core Data.
 
-That was until I ran it on the device and realized: Core Data bit me. Although the full data downloaded in about two seconds on broadband, the Core Data import took a whole minute to complete. That's one second. Plus one second. Plus one second. 60 times. During which only part of the programs was available shown on screen. Hello 1-stars. Way too slow.
+That was until I ran it on the device and realized: Core Data bit me. Although the full data downloaded in about two seconds on broadband, the Core Data import took a whole minute to complete. That's one second. Plus one second. Plus one second. 60 times. During which only part of the programs was available on screen. Hello 1-stars. Way too slow.
 
 To understand why that is, here's a schema of the backend. We have channels, for instance BBC 2, programs such as Top Gear, and broadcasts that link the two: Top Gear on BBC 2 sunday at 8pm.
 
@@ -16,9 +16,9 @@ The Core Data schema follows the same logic: three simple entities, and 1 to 1 b
 
 After profiling the code, it appears that importing the channels and programs (8000 objects) is completed within a fair 10 seconds. Again, this is an iPhone 3GS where I/O isn't that good and we're streaming the results, so that's acceptable. Syncing the broadcasts took 50 seconds. And that is after optimizing the heck out of it: batching, caching object IDs when we import channels and programs so we only set the relationship, sacrificing an Android device: 50 seconds is a concrete wall. We need better data.
 
-And that means handing it over to our team racing driver. Core Data Instruments tells us that when broadcasts are being created, channels, programs and their their relationships are being faulted. That’s an awful lot of I/O for a simple object creation. If you look at the code, no access to these are made. Why would it need to fault these objects since they're not even touched? It obviously has to do with relationships. Let’s work on that, first by disabling inverse relationships.
+And that means handing it over to our team racing driver. Core Data Instruments tells us that when broadcasts are being created, channels, programs and their relationships are being faulted. That’s an awful lot of I/O for a simple object creation. If you look at the code, no access to these are made. Why would it need to fault these objects since they're not even touched? It obviously has to do with relationships. Let’s work on that, first by disabling inverse relationships.
 
-That’s it: Xcode is complaining but inserting a broadcast takes the same time as inserting simple objects such as channels and programs. Now that we’ve found the culprit, let’s dig a little further by analyzing the SQL statements made by Core Data.
+That’s it: Xcode is complaining but inserting a broadcast takes the same time as inserting simple objects such as channels and programs. Now that we’ve found the culprit, let’s dig a little further by analyzing the SQL statements issued by Core Data.
 
 It turns out every time a broadcast is created, its channel and program along with their inverse relationships are faulted. The channel and program are then updated: their mysterious Z_OPT field is being bumped. And finally, the broadcast is created. In the database, the inverse relationship has no dedicated table: it uses the broadcast table. In fact the SQL schema is exactly the same with and without an inverse relationship: it only exists in Core Data’s reality distortion field.
 
@@ -34,6 +34,4 @@ The first approach is to reconsider your problem. Did I really need to import th
 
 You could also remove inverse relationships. Xcode warns you that you should have an inverse relationship for a reason: you’re entering the grey zone of dangling NSManagedObjects and an inconsistent object graph. You will have to do Core Data’s work of making sure broadcasts are deleted when programs or channels are. If you don’t, the relation between the broadcast and the now deleted channel will be invalid, and you’re in for crashes. That being said, if you’re taking all the necessary precautions, this is a suitable option, and you keep Core Data’s advantages for the rest of your model.
 
-Third option would be to jump ships and go with raw SQLite. You will get top notch import performance, but you will essentially have to re-do Core Data’s work to load chunked lists of broadcasts to display in table views, make sure your UI gets updated when a channel is deleted or deal with database migration when your model changes. This will take forever to stabilize and you will miss Core Data because it’s such a great framework. Depending on your problem, that may well be your best option though. Brent Simmons famously did it with .
-
-Links: github project, Core Data documentation, Brent Simmons post.
+Third option would be to jump ships and go with raw SQLite. You will get top notch import performance, but you will essentially have to re-do Core Data’s work to load chunked lists of broadcasts to display in table views, make sure your UI gets updated when a channel is deleted or deal with database migration when your model changes. This will take forever to stabilize and you will miss Core Data because it’s such a great framework. Depending on your problem, that may well be your best option though. Brent Simmons famously did it with NetNewsWire.
