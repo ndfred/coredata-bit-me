@@ -1,0 +1,10 @@
+Core Data bit me
+================
+
+NSConference 2012 talk by Frédéric Sagnes, teapot apps.
+
+Here you will find the slides and the transcript of my talk, along with all the material I used:
+
+* open and run `CoreData.xcodeproj` to run the benchmarks
+* run `generate-log.sh` to generate the SQLite dump of a single broadcast import
+* have a look at `Results.numbers` if you want to see the raw numbers
