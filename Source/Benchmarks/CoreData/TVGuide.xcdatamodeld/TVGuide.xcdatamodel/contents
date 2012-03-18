@@ -15,8 +15,8 @@
         <relationship name="broadcasts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Broadcast" inverseName="program" inverseEntity="Broadcast" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Broadcast" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="Channel" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Program" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Broadcast" positionX="250" positionY="207" width="128" height="75"/>
+        <element name="Channel" positionX="27" positionY="18" width="128" height="90"/>
+        <element name="Program" positionX="484" positionY="18" width="128" height="90"/>
     </elements>
 </model>
